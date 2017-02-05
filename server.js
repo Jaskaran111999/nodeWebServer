@@ -23,9 +23,9 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use((req, res, next) => {
-	res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+// 	res.render('maintenance.hbs');
+// });
 
 app.get('/', (req, res) => {
 	res.render('home.hbs', {
@@ -38,6 +38,12 @@ app.get('/about', (req, res) => {
 	res.render('about.hbs',{
 		pageTitle: 'About Page',
 	});
+});
+
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs', {
+		pageTitle: 'Projects Page'
+	})
 });
 
 app.listen(port, () => {
